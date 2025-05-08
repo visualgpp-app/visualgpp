@@ -1,0 +1,3 @@
+[submodule "src/lib-visualg"]
+	path = src/lib-visualg
+	url = https://github.com/visualgpp-app/interpreter

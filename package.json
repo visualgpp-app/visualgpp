@@ -1,0 +1,77 @@
+{
+  "name": "visualgpp",
+  "private": true,
+  "main": "index.js",
+  "version": "0.0.1",
+  "author": {
+    "name": "Lucas Gabriel (lucmsilva)",
+    "email": "lucmsilva651@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visualgpp-app/visualgpp.git"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^36.2.0",
+    "electron-builder": "^26.0.12",
+    "nodemon": "^3.1.10"
+  },
+  "packageName": "VisualG++",
+  "build": {
+    "appId": "com.lucmsilva.visualgpp",
+    "productName": "VisualG++",
+    "asar": true,
+    "files": [
+      "main.js",
+      "preload.js",
+      {
+        "from": "src/",
+        "to": "app",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "directories": {
+      "buildResources": "src/icons"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "win": {
+      "icon": "src/icons/win/icon.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "icon": "src/icons/png",
+      "category": "AudioVideo",
+      "target": [
+        "deb",
+        "rpm"
+      ]
+    },
+    "mac": {
+      "icon": "src/icons/mac/icon.icns",
+      "category": "public.app-category.audio-video",
+      "target": [
+        "dmg"
+      ]
+    }
+  },
+  "description": "VisualG é um software para o ensino de algoritimos sendo uma versão melhorada do VisualG.",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "start": "nodemon --watch . --ignore node_modules --exec \"electron .\"",
+    "dist": "cross-env GENERATE_SOURCEMAP=false GENERATE_BLOCKMAP=false electron-builder"
+  },
+  "dependencies": {
+    "@electron-toolkit/utils": "^4.0.0"
+  }
+}
