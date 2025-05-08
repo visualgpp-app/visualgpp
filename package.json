@@ -65,7 +65,7 @@
       ]
     }
   },
-  "description": "VisualG é um software para o ensino de algoritimos sendo uma versão melhorada do VisualG.",
+  "description": "VisualG++ é um software para o ensino de algoritimos sendo uma versão melhorada do VisualG.",
   "license": "BSD-3-Clause",
   "scripts": {
     "start": "nodemon --watch . --ignore node_modules --exec \"electron .\"",
