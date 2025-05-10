@@ -34,7 +34,6 @@
   align-items: center;
 }
 
-.titlebar,
 .titlebar>ul>li>.dropdown,
 .titlebar>ul>li>.dropdown>hr,
 main div {
@@ -42,7 +41,7 @@ main div {
 }
 
 .titlebar {
-  padding-right: 160px;
+  border-bottom: 1px solid #afafaf;
   justify-content: space-between;
   height: 35px;
   position: relative;
