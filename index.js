@@ -17,7 +17,8 @@ app.whenReady().then(() => {
     height: 600,
     minWidth: 800,
     minHeight: 600,
-    resizable: false,
+    resizable: true,
+    maximizable: true,
     center: true,
     titleBarStyle: 'hidden',
     titleBarOverlay: {
