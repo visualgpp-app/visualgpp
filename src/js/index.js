@@ -57,7 +57,10 @@ uiElements.aboutVGPPBtn.addEventListener('click', async () => {
 uiElements.aboutVGOBtn.addEventListener('click', async () => {
   const modalHeader = 'Sobre o VisualG (original)';
   const modalContent = `
-    <p>config</p>
+    <p>O VisualG é um editor e interpretador de algorítimos escritos em Portugol (PORTUguês, ALGOL e PascaL).</p>
+    <p>Foi feito em Delphi, desenvolvido originalmente por Cláudio Morgado de Souza, sendo atualmente mantido por Antonio Carlos Nicolodi.</p>
+    <p>SourceForge: <a href="https://sourceforge.net/projects/visualg30" target="_blank">sourceforge.net/projects/visualg30</a></p>
+    <p>Site (desativado): <a href="https://visualg3.com.br" target="_blank">visualg3.com.br</a></p>
   `
   const modalImage = undefined;
 
