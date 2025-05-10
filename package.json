@@ -21,7 +21,7 @@
     "productName": "VisualG++",
     "asar": true,
     "files": [
-      "main.js",
+      "index.js",
       "preload.js",
       {
         "from": "src/",
