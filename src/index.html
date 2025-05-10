@@ -3,88 +3,212 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="app/css/index.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/ui.css">
   <title>VisualG++</title>
 </head>
 <body>
+  <dialog id="modalDialog">
+    <div class="modal">
+      <img id="modalImg" width="128" height="128">
+      <div id="modalContent">
+        <h2 id="modalHeader"></h2>
+        <div id="modalInner"></div>
+      </div>
+    </div>
+    <button id="closeDialog" autofocus>Fechar</button>
+  </dialog>
   <div class="titlebar">
     <ul>
-      <li>
-        <img src="icons/png/24x24.png" alt="Logo" class="logo">
-      </li>
-      <li id="file">Arquivo
+      <li id="about">
+        <img src="icons/png/24x24.png" alt="Logo" class="logo" width="24" height="24">
         <ul class="dropdown">
-          <li>Novo</li>
-          <li>Abrir</li>
+          <li id="aboutVGPP">
+            <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i>
+            Sobre o VisualG++
+          </li>
           <hr>
-          <li>Salvar</li>
-          <li>Salvar como</li>
+          <li id="aboutVGO">
+            <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i>
+            Sobre o VisualG original
+          </li>
           <hr>
-          <li>Imprimir algoritmo</li>
-          <hr>
-          <li>Sair</li>
+          <li id="quitAppBtn">
+            <i class="ms-Icon ms-Icon--ChromeClose" aria-hidden="true"></i>
+            Sair
+          </li>
         </ul>
       </li>
-      <li id="edit">Editar
+      <li id="file">
+        Arquivo
         <ul class="dropdown">
-          <li>Desfazer</li>
-          <li>Refazer</li>
+          <li id="newFileBtn">
+            <i class="ms-Icon ms-Icon--Generate" aria-hidden="true"></i>
+            Novo
+          </li>
+          <li id="openFileBtn">
+            <i class="ms-Icon ms-Icon--OpenFile" aria-hidden="true"></i>
+            Abrir
+          </li>
           <hr>
-          <li>Recortar</li>
-          <li>Copiar</li>
-          <li>Colar</li>
-          <li>Indentação</li>
+          <li id="saveFileBtn">
+            <i class="ms-Icon ms-Icon--Save" aria-hidden="true"></i>
+            Salvar
+          </li>
+          <li id="saveAsFileBtn">
+            <i class="ms-Icon ms-Icon--SaveAs" aria-hidden="true"></i>
+            Salvar como
+          </li>
           <hr>
-          <li>Selecionar tudo</li>
-          <hr>
-          <li>Localizar</li>
-          <li>Localizar o próximo</li>
-          <li>Localizar o anterior</li>
-          <hr>
-          <li>Substituir</li>
-          <hr>
-          <li>Gravar bloco</li>
-          <li>Inserir bloco</li>
+          <li id="printFileBtn">
+            <i class="ms-Icon ms-Icon--Print" aria-hidden="true"></i>
+            Imprimir algoritmo
+          </li>
         </ul>
       </li>
-      <li id="run">Executar
+      <li id="edit">
+        Editar
         <ul class="dropdown">
-          <li>Executar o algoritmo</li>
-          <li>Executar passo a passo</li>
-          <li>Executar com temporizador</li>
-          <li>Parar execução</li>
+          <li id="undoBtn">
+            <i class="ms-Icon ms-Icon--Undo" aria-hidden="true"></i>
+            Desfazer
+          </li>
+          <li id="redoBtn">
+            <i class="ms-Icon ms-Icon--Redo" aria-hidden="true"></i>
+            Refazer
+          </li>
           <hr>
-          <li>Ligar/desligar breakpoint</li>
-          <li>Remover todos os breakpoints</li>
+          <li id="cutBtn">
+            <i class="ms-Icon ms-Icon--Cut" aria-hidden="true"></i>
+            Recortar
+          </li>
+          <li id="copyBtn">
+            <i class="ms-Icon ms-Icon--Copy" aria-hidden="true"></i>
+            Copiar
+          </li>
+          <li id="pasteBtn">
+            <i class="ms-Icon ms-Icon--Paste" aria-hidden="true"></i>
+            Colar
+          </li>
+          <li id="identationBtn">
+            <i class="ms-Icon ms-Icon--CodeEdit" aria-hidden="true"></i>
+            Indentação
+          </li>
           <hr>
-          <li>Gerar valores aleatórios</li>
+          <li id="selectAllBtn">
+            <i class="ms-Icon ms-Icon--SelectAll" aria-hidden="true"></i>
+            Selecionar tudo
+          </li>
           <hr>
-          <li>Perfil</li>
-          <li>Pilha de ativação</li>
+          <li id="findBtn">
+            <i class="ms-Icon ms-Icon--DocumentSearch" aria-hidden="true"></i>
+            Localizar
+          </li>
+          <li id="findNextBtn">
+            <i class="ms-Icon ms-Icon--Search" aria-hidden="true"></i>
+            Localizar o próximo
+          </li>
+          <li id="findPrevBtn">
+            <i class="ms-Icon ms-Icon--Search" aria-hidden="true"></i>
+            Localizar o anterior
+          </li>
+          <hr>
+          <li id="replaceBtn">
+            <i class="ms-Icon ms-Icon--ChangeEntitlements" aria-hidden="true"></i>
+            Substituir
+          </li>
+          <hr>
+          <li id="writeBlockBtn">
+            <i class="ms-Icon ms-Icon--Insert" aria-hidden="true"></i>
+            Gravar bloco
+          </li>
+          <li id="insertBlockBtn">
+            <i class="ms-Icon ms-Icon--Insert" aria-hidden="true"></i>
+            Inserir bloco
+          </li>
         </ul>
       </li>
-      <li id="maintenance">Manutenção
+      <li id="run">
+        Executar
         <ul class="dropdown">
-          <li>Configurações</li>
-        </ul>
-      </li>
-      <li id="help">Ajuda
-        <ul class="dropdown">
-          <li>Documentação</li>
-        </ul>
-      </li>
-      <li id="about">Sobre
-        <ul class="dropdown">
-          <li>Sobre o VisualG++</li>
+          <li id="runAlgorithmBtn">
+            <i class="ms-Icon ms-Icon--DeviceRun" aria-hidden="true"></i>
+            Executar o algoritmo
+          </li>
+          <li id="runStepBtn">
+            <i class="ms-Icon ms-Icon--ProcessingRun" aria-hidden="true"></i>
+            Executar passo a passo
+          </li>
+          <li id="runTimerBtn">
+            <i class="ms-Icon ms-Icon--Timer" aria-hidden="true"></i>
+            Executar com temporizador
+          </li>
+          <li id="runStopBtn">
+            <i class="ms-Icon ms-Icon--Stop" aria-hidden="true"></i>
+            Parar execução
+          </li>
           <hr>
-          <li>Sobre o VisualG original</li>
+          <li id="breakpointToggleBtn">
+            <i class="ms-Icon ms-Icon--CircleAddition" aria-hidden="true"></i>
+            Ligar/desligar breakpoint
+          </li>
+          <li id="breakpointRemoveAllBtn">
+            <i class="ms-Icon ms-Icon--SkypeCircleSlash" aria-hidden="true"></i>
+            Remover todos os breakpoints
+          </li>
+          <hr>
+          <li id="generateRandomBtn">
+            <i class="ms-Icon ms-Icon--Print" aria-hidden="true"></i>
+            Gerar valores aleatórios
+          </li>
+          <hr>
+          <li id="profileBtn">
+            <i class="ms-Icon ms-Icon--FabricFolderSearch" aria-hidden="true"></i>
+            Perfil
+          </li>
+          <li id="activationStackBtn">
+            <i class="ms-Icon ms-Icon--FabricOpenFolderHorizontal" aria-hidden="true"></i>
+            Pilha de ativação
+          </li>
+        </ul>
+      </li>
+      <li id="maintenance">
+        Manutenção
+        <ul class="dropdown">
+          <li id="settingsBtn">
+            <i class="ms-Icon ms-Icon--Settings" aria-hidden="true"></i>
+            Configurações
+          </li>
+        </ul>
+      </li>
+      <li id="help">
+        Ajuda
+        <ul class="dropdown">
+          <li id="docsBtn">
+            <i class="ms-Icon ms-Icon--BookAnswers" aria-hidden="true"></i>
+            Documentação
+          </li>
         </ul>
       </li>
     </ul>
-    <div class="titlebar-text">VisualG++ - Lucas Gabriel (lucmsilva)</div>
   </div>
   <main>
+    <div class="code-section">
+      <span class="section-title">
+        Área dos algoritimos (Edição do código fonte)
+      </span>
+    </div>
+    <div class="memory-section">
+      <span class="section-title">
+        Área das variáveis de memória (globais e locais)
+      </span>
+    </div>
+    <div class="results-section">
+      <span class="section-title">
+        Área de visualização dos resultados
+      </span>
+    </div>
   </main>
-  <script src="app/js/index.js"></script>
+  <script type="module" src="js/index.js"></script>
 </body>
 </html>
